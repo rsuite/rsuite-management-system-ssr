@@ -1,0 +1,4 @@
+{
+  "presets": ["@babel/preset-flow", "next/babel"],
+  "plugins": ["add-module-exports", "@babel/plugin-proposal-export-default-from"]
+}
