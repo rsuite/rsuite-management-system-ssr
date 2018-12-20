@@ -21,7 +21,7 @@
     "react-chartist": "^0.13.1",
     "react-dom": "^16.6.3",
     "react-intl": "^2.7.2",
-    "rsuite": "3.6.0-beta.3"
+    "rsuite": "^3.5.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-export-default-from": "^7.2.0",
