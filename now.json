@@ -1,6 +1,8 @@
 
 {
   "name": "rsuite-next-app",
-  "version":1,
+  "version":2,
+  "public": true,
   "type": "npm"
+  
 }
