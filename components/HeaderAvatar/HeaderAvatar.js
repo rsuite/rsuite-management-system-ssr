@@ -1,7 +1,5 @@
-//@flow
-
-import * as React from 'react';
-import { Dropdown, Popover, Whisper, Icon } from 'rsuite';
+import * as React from "react";
+import { Dropdown, Popover, Whisper, Icon } from "rsuite";
 
 const Menu = ({ onSelect }) => (
   <Dropdown.Menu onSelect={onSelect}>
@@ -26,10 +24,9 @@ const MenuPopover = ({ onSelect, ...rest }) => (
   </Popover>
 );
 
-type Props = {};
-class HeaderAvatar extends React.Component<Props> {
+class HeaderAvatar extends React.Component {
   trigger = null;
-  handleSelectMenu = (eventKey: any, event: SyntheticEvent<*>) => {
+  handleSelectMenu = (eventKey, event) => {
     if (this.trigger) {
       this.trigger.hide();
     }

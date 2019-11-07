@@ -15,13 +15,13 @@
     "chartist": "^0.11.0",
     "dom-lib": "1.1.0-beta.1",
     "less": "^3.9.0",
-    "next": "^7.0.2",
+    "next": "^9.1.2",
     "next-images": "^1.0.3",
     "react": "^16.6.3",
     "react-chartist": "^0.13.1",
     "react-dom": "^16.6.3",
     "react-intl": "^2.7.2",
-    "rsuite": "^3.5.0"
+    "rsuite": "^4.1.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-export-default-from": "^7.2.0",

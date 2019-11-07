@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { Row, Col, Icon, Panel } from 'rsuite';
+import * as React from "react";
+import { Row, Col, Panel } from "rsuite";
 
-import * as images from '../../images/charts';
-import ColorfulChart from './ColorfulChart';
-import SimpleLineChart from './SimpleLineChart';
-import SimplePieChart from './SimplePieChart';
+import * as images from "../../images/charts";
+import ColorfulChart from "./ColorfulChart";
+import SimpleLineChart from "./SimpleLineChart";
+import SimplePieChart from "./SimplePieChart";
 
 const pvChartData = {
   labels: [1, 2, 3, 4, 5, 6, 7],
@@ -22,7 +22,7 @@ const uvChartData = {
 };
 
 const barChartData = {
-  labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+  labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
   series: [
     [92332, 93221, 132344, 142334, 83432, 264342, 153544],
     [112332, 123221, 432344, 342334, 133432, 564342, 353544]
@@ -30,13 +30,11 @@ const barChartData = {
 };
 
 const pieChartData = {
-  labels: ['Direct', 'Internal', 'Referrals', 'Search Engines'],
+  labels: ["Direct", "Internal", "Referrals", "Search Engines"],
   series: [112332, 123221, 432334, 342334]
 };
 
-type Props = {};
-
-class Dashboard extends React.Component<Props> {
+class Dashboard extends React.Component {
   render() {
     return (
       <Panel className="dashboard" header={<h3>Dashboard</h3>}>
@@ -93,10 +91,18 @@ class Dashboard extends React.Component<Props> {
 
         <Row gutter={30}>
           <Col xs={16}>
-            <SimpleLineChart title="Page Views Trends by Week" data={barChartData} type="Line" />
+            <SimpleLineChart
+              title="Page Views Trends by Week"
+              data={barChartData}
+              type="Line"
+            />
           </Col>
           <Col xs={8}>
-            <SimplePieChart title="Traffic Sources" data={pieChartData} type="Pie" />
+            <SimplePieChart
+              title="Traffic Sources"
+              data={pieChartData}
+              type="Pie"
+            />
           </Col>
         </Row>
       </Panel>

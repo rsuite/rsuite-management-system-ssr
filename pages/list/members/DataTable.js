@@ -1,35 +1,23 @@
-// @flow
-
-import * as React from 'react';
+import * as React from "react";
 import {
   Input,
   InputGroup,
-  Breadcrumb,
   Table,
   Panel,
   Icon,
   ButtonToolbar,
   Button,
-  IconButton,
-  Navbar,
   DOMHelper,
-  Notification,
-  SelectPicker,
-  Uploader
-} from 'rsuite';
+  SelectPicker
+} from "rsuite";
 
-import data from './users';
-import DrawerView from './DrawerView';
+import data from "./users";
+import DrawerView from "./DrawerView";
 
 const { Column, HeaderCell, Cell } = Table;
 const { getHeight } = DOMHelper;
 
-type Props = {};
-type State = {
-  showDrawer: boolean
-};
-
-class DataList extends React.Component<Props, State> {
+class DataList extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -47,14 +35,21 @@ class DataList extends React.Component<Props, State> {
     });
   };
   render() {
-    const filterData = [{ label: 'All', value: 0 }, { label: 'Enabled', value: 1 }];
+    const filterData = [
+      { label: "All", value: 0 },
+      { label: "Enabled", value: 1 }
+    ];
 
     return (
       <div>
         <Panel header={<h3>Members</h3>}>
           <div className="table-toolbar">
             <ButtonToolbar className="inner-left">
-              <Button appearance="primary" placement="left" onClick={this.handleShowDrawer}>
+              <Button
+                appearance="primary"
+                placement="left"
+                onClick={this.handleShowDrawer}
+              >
                 New
               </Button>
               <SelectPicker data={filterData} />
@@ -113,7 +108,10 @@ class DataList extends React.Component<Props, State> {
             </Column>
           </Table>
         </Panel>
-        <DrawerView show={this.state.showDrawer} onClose={this.handleCloseDrawer} />
+        <DrawerView
+          show={this.state.showDrawer}
+          onClose={this.handleCloseDrawer}
+        />
       </div>
     );
   }

@@ -1,13 +1,15 @@
-//@flow
-import * as React from 'react';
-import { Drawer, Button, Form, FormGroup, ControlLabel, FormControl, HelpBlock } from 'rsuite';
+import * as React from "react";
+import {
+  Drawer,
+  Button,
+  Form,
+  FormGroup,
+  ControlLabel,
+  FormControl,
+  HelpBlock
+} from "rsuite";
 
-type Props = {
-  show: boolean,
-  onClose: () => void
-};
-
-class DrawerView extends React.Component<Props> {
+class DrawerView extends React.Component {
   render() {
     const { show, onClose } = this.props;
     return (

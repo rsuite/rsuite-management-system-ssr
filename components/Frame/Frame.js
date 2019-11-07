@@ -1,53 +1,51 @@
 // @flow
 
-import * as React from 'react';
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
-import Link from 'next/link';
+import * as React from "react";
+import classNames from "classnames";
+import PropTypes from "prop-types";
 
 import {
   Container,
   Sidebar,
   Sidenav,
   Icon,
-  Header,
   Content,
   Dropdown,
   Nav,
   DOMHelper
-} from 'rsuite';
+} from "rsuite";
 
-import NavToggle from './NavToggle';
-import HeaderAvatar from '../HeaderAvatar';
+import NavToggle from "./NavToggle";
+import HeaderAvatar from "../HeaderAvatar";
 
 const { getHeight, on } = DOMHelper;
 const navs = [
   {
-    key: '1',
+    key: "1",
     icon: <Icon icon="dashboard" />,
-    text: 'Dashboard',
-    link: '/'
+    text: "Dashboard",
+    link: "/"
   },
   {
-    key: '2',
+    key: "2",
     icon: <Icon icon="group" />,
-    text: 'Members',
-    link: '/list/members'
+    text: "Members",
+    link: "/list/members"
   },
   {
-    key: '3',
-    text: 'Errors',
+    key: "3",
+    text: "Errors",
     icon: <Icon icon="exclamation-triangle" />,
     children: [
       {
-        key: '3-1',
-        text: '404',
-        link: '/error/404'
+        key: "3-1",
+        text: "404",
+        link: "/error/404"
       },
       {
-        key: '3-2',
-        text: '500',
-        link: '/error/500'
+        key: "3-2",
+        text: "500",
+        link: "/error/500"
       }
     ]
   }
@@ -59,7 +57,7 @@ class Frame extends React.Component {
     router: PropTypes.object
   };
 
-  constructor(props: Props) {
+  constructor(props) {
     super(props);
     this.state = {
       windowHeight: 0,
@@ -67,7 +65,7 @@ class Frame extends React.Component {
     };
   }
   componentDidMount() {
-    this.resizeListenner = on(window, 'resize', this.updateHeight);
+    this.resizeListenner = on(window, "resize", this.updateHeight);
     this.setState({
       windowHeight: getHeight(window)
     });
@@ -96,7 +94,7 @@ class Frame extends React.Component {
         return (
           <Dropdown
             key={item.key}
-            placement="rightTop"
+            placement="rightStart"
             trigger="hover"
             title="Errors"
             icon={item.icon}
@@ -104,7 +102,11 @@ class Frame extends React.Component {
           >
             {item.children.map((child, index) => {
               return (
-                <Dropdown.Item href={child.link} key={child.key} eventKey={child.key}>
+                <Dropdown.Item
+                  href={child.link}
+                  key={child.key}
+                  eventKey={child.key}
+                >
                   {child.text}
                 </Dropdown.Item>
               );
@@ -114,7 +116,12 @@ class Frame extends React.Component {
       }
 
       return (
-        <Nav.Item href={item.link} key={item.key} eventKey={item.key} icon={item.icon}>
+        <Nav.Item
+          href={item.link}
+          key={item.key}
+          eventKey={item.key}
+          icon={item.icon}
+        >
           {item.text}
         </Nav.Item>
       );
@@ -125,36 +132,40 @@ class Frame extends React.Component {
     const { children, activeKey } = this.props;
     const { expand, windowHeight } = this.state;
 
-    const containerClasses = classNames('page-container', {
-      'container-full': !expand
+    const containerClasses = classNames("page-container", {
+      "container-full": !expand
     });
 
     let navBodyStyle = null;
     if (expand) {
       navBodyStyle = {
         height: windowHeight - 112,
-        overflow: 'auto'
+        overflow: "auto"
       };
     }
 
     return (
       <Container className="frame">
         <Sidebar
-          style={{ display: 'flex', flexDirection: 'column' }}
+          style={{ display: "flex", flexDirection: "column" }}
           width={expand ? 260 : 56}
           collapsible
         >
           <Sidenav.Header>
             <div className="header-hrand">
               <a href="/">
-                <Icon icon="logo-analytics" size="lg" style={{ verticalAlign: 0 }} />
+                <Icon
+                  icon="logo-analytics"
+                  size="lg"
+                  style={{ verticalAlign: 0 }}
+                />
                 <span style={{ marginLeft: 12 }}> RSUITE ANALYTICS</span>
               </a>
             </div>
           </Sidenav.Header>
           <Sidenav
             expanded={expand}
-            defaultOpenKeys={['1', '2', '3']}
+            defaultOpenKeys={["1", "2", "3"]}
             activeKey={activeKey}
             appearance="subtle"
           >

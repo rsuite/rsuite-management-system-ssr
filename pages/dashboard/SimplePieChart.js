@@ -1,6 +1,5 @@
-import React from 'react';
-import Chartist from 'react-chartist';
-import { formatValue } from '../../utils';
+import React from "react";
+import Chartist from "react-chartist";
 
 const SimplePieChart = ({ className, title, data, type, options }) => (
   <div className="simple-chart">
