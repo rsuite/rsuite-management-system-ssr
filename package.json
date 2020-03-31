@@ -15,7 +15,7 @@
     "chartist": "^0.11.0",
     "dom-lib": "1.1.0-beta.1",
     "less": "^3.9.0",
-    "next": "^9.1.2",
+    "next": "^9.3.2",
     "next-images": "^1.0.3",
     "react": "^16.6.3",
     "react-chartist": "^0.13.1",
